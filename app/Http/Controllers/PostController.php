@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+ dev_basis02
      public function index(Post $post)
     {
         return view('index')->with(['posts' => $post->get()]);  
+
+    public function index(Post $post)
+    {
+    return $post->get();
+ master
     }
 }
