@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-dev_basis03
+
 use App\Category;
-use App\Post;
+
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
+
+use App\Post;
+
 
 class PostController extends Controller
 {
@@ -20,20 +22,10 @@ public function show(Post $post)
     return view('show')->with(['post' => $post]);
 }
 
-use App\Post;
-use Illuminate\Http\Request;
 
-class PostController extends Controller
+public function create()
 {
- dev_basis02
-     public function index(Post $post)
-    {
-        return view('index')->with(['posts' => $post->get()]);  
+    return view('create');
+}
 
-    public function index(Post $post)
-    {
-    return $post->get();
- master
-    }
- master
 }

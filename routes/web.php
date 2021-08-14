@@ -13,12 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- dev_basis03
+
 Route::get('/', 'PostController@index');
+Route::get('/posts/create', 'PostController@create');
 Route::get('/posts/{post}', 'PostController@show');
 
-dev_basis02
-Route::get('/', 'PostController@index');
 
- master
- master
+
