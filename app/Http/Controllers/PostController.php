@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use App\Http\Requests\PostRequest;
+
 
 class PostController extends Controller
 {
@@ -28,7 +30,7 @@ public function create()
     return view('create');
 }
 
-public function store(Request $request, Post $post)
+public function store(PostRequest $request, Post $post)
 {
     $input = $request['post'];
     $post->fill($input)->save();
