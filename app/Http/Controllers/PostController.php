@@ -14,7 +14,7 @@ class PostController extends Controller
 {
 public function index(Post $post)
 {
-    return view('index')->with(['posts' => $post->getPaginateByLimit(5)]);
+    return view('index')->with(['posts' => $post->getPaginate()]);
 }
 
 public function show(Post $post)
@@ -26,6 +26,13 @@ public function show(Post $post)
 public function create()
 {
     return view('create');
+}
+
+public function store(Request $request, Post $post)
+{
+    $input = $request['post'];
+    $post->fill($input)->save();
+    return redirect('/posts/' . $post->id);
 }
 
 }
